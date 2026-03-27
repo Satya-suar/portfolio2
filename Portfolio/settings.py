@@ -25,17 +25,9 @@ DEBUG = ENVIRONMENT != "production"
 # Production settings for Vercel
 if ENVIRONMENT == "production":
     DEBUG = False
-    ALLOWED_HOSTS = [
-        "*.vercel.app",
-        "localhost",
-        "127.0.0.1",
-    ]
+    ALLOWED_HOSTS = ['.vercel.app']
 else:
-    ALLOWED_HOSTS = [
-        "localhost",
-        "127.0.0.1",
-        "my-portfolio-old8.onrender.com",
-    ]
+  ALLOWED_HOSTS = ['.vercel.app']
 
 # --------------------------------------------------
 # APPLICATIONS

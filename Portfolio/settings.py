@@ -26,7 +26,6 @@ DEBUG = ENVIRONMENT != "production"
 if ENVIRONMENT == "production":
     DEBUG = False
     ALLOWED_HOSTS = [
-        "my-portfolio-old8.onrender.com",
         "*.vercel.app",
         "localhost",
         "127.0.0.1",

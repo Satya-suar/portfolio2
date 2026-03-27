@@ -135,10 +135,7 @@ else:
     EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
     print("SMTP configured for real email sending.")
 
-DEFAULT_FROM_EMAIL = os.environ.get(
-    "DEFAULT_FROM_EMAIL",
-    "satyabratasuar163@gmail.com"
-)
+
 
 SENDGRID_SANDBOX_MODE_IN_DEBUG = False
 

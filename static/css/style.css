@@ -1,0 +1,554 @@
+/* ===============================
+   GOOGLE FONTS
+================================ */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&display=swap');
+
+/* ===============================
+   GLOBAL RESET
+================================ */
+* {
+
+  font-family: "Delius Swash Caps", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+
+  color: #e5e7eb;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* ===============================
+   NAVBAR GLOW UNDERLINE (HOVER)
+================================ */
+.nav-link {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+/* underline */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg,
+      #38bdf8,
+      #a855f7,
+      #38bdf8);
+  transform: translateX(-50%);
+  transition: width 0.35s ease;
+  border-radius: 999px;
+  box-shadow:
+    0 0 8px rgba(56, 189, 248, 0.6),
+    0 0 16px rgba(168, 85, 247, 0.5);
+}
+
+/* hover effect */
+.nav-link:hover::after {
+  width: 100%;
+}
+
+
+/* ===============================
+   ICONS
+================================ */
+.cil-book {
+  font-size: 50px;
+}
+
+/* ===============================
+   ANIMATIONS (USED)
+================================ */
+
+/* Floating */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.floating,
+.floating-photo {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Slow Spin */
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin 1s linear infinite;
+}
+
+/* ===============================
+   BACKGROUND
+================================ */
+.animated-bg {
+  background: linear-gradient(-45deg, #0f192f);
+  background-size: 400% 400%;
+  animation: gradientFlow 20s ease infinite;
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ===============================
+   GLASS MORPHISM (FINAL)
+================================ */
+.glass {
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+  transition: all 0.35s ease;
+}
+
+.glass:hover {
+  box-shadow:
+    0 0 25px rgba(0, 255, 255, 0.6),
+    0 0 50px rgba(0, 255, 255, 0.35);
+  transform: translateY(-6px) scale(1.02);
+}
+
+/* ===============================
+   HOVER EFFECTS
+================================ */
+.hover-lift {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.55);
+  transition: box-shadow 0.6s ease, transform 0.6s ease;
+}
+
+.hover-lift:hover {
+  box-shadow: 0 0 32px rgba(56, 189, 248, 0.28);
+  transform: translateY(-3px);
+}
+
+.soft-hover {
+  transition: all 0.6s ease;
+}
+
+.soft-hover:hover {
+  box-shadow: 0 0 30px rgba(85, 174, 247, 0.5);
+  transform: translateY(-2px);
+}
+
+
+
+
+
+
+
+
+/* ===============================
+   NAVIGATION
+================================ */
+.nav-link {
+  position: relative;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px rgba(0, 183, 255, 0.4);
+}
+
+.nav-link:hover {
+  color: #38bdf8;
+  text-shadow:
+    0 0 10px rgba(0, 183, 255, 0.8),
+    0 0 20px rgba(0, 183, 255, 0.6);
+  transform: scale(1.05);
+}
+
+.nav-name {
+  font-size: clamp(1.6rem, 2.5vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: transparent;
+  background: linear-gradient(90deg, #60c1fa, #e267ed, #eb59f8);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-shadow: 0 0 4px rgba(96, 165, 250, 0.35);
+}
+
+/* ===============================
+   GLOW BORDER (PROFILE IMAGE)
+================================ */
+.glow-border::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg,
+      rgba(0, 255, 255, 0.6),
+      rgba(138, 43, 226, 0.6),
+      rgba(0, 255, 255, 0.6));
+  filter: blur(10px);
+  z-index: -1;
+}
+
+
+
+/* ===== SKILL CARD STYLE (MATCH EDUCATION CARD) ===== */
+
+.skill-chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.skill-chip {
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(6px);
+  color: #e5e7eb;
+  box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.05);
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+/* subtle hover on chips */
+.skill-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(47, 76, 148, 0.35);
+}
+
+/* ===== TRANSPARENT GLASS CARD (SHOW BACKGROUND ANIMATION) ===== */
+.glass {
+  background: rgba(255, 255, 255, 0.06);
+  /* MORE TRANSPARENT */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.35),
+    inset 0 0 15px rgba(255, 255, 255, 0.04);
+
+  transition:
+    transform 0.6s ease,
+    box-shadow 0.6s ease;
+}
+
+/* ===== SCROLL REVEAL BASE ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 1s ease,
+    transform 1.5s ease;
+  will-change: transform, opacity;
+}
+
+/* WHEN VISIBLE */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* SLOWER VARIANT (cards) */
+.reveal-slow {
+  transition:
+    opacity 1.3s ease,
+    transform 1.8s ease;
+}
+
+/* EXTRA SMOOTH FOR LARGE SECTIONS */
+.reveal-section {
+  transform: translateY(60px);
+  transition:
+    opacity 1.6s ease,
+    transform 1.8s ease;
+}
+
+
+/* ===== PROJECT CARD (SKILL STYLE) ===== */
+
+.project-skill-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.project-skill-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 45px rgba(56, 189, 248, 0.35);
+}
+
+/* tech stack buttons */
+.tech-badge {
+  padding: 8px 12px;
+  font-size: 0.75rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease;
+}
+
+.tech-badge:hover {
+  background: rgba(56, 189, 248, 0.35);
+  transform: scale(1.05);
+}
+
+/* action buttons */
+.project-btn {
+  padding: 12px;
+  border-radius: 14px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: all 0.4s ease;
+}
+
+.project-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.45);
+}
+
+
+
+
+/* ===============================
+   CONTACT FORM (CLEAR CARD)
+================================ */
+
+/* Overlay */
+.contact-overlay {
+  background: rgba(5, 8, 20, 0.75);
+  backdrop-filter: blur(4px);
+  /* light blur only */
+}
+
+/* Card */
+.contact-card {
+  background: rgba(255, 255, 255, 0.16);
+  /* LESS transparent */
+  backdrop-filter: blur(6px);
+  /* NOT foggy */
+  -webkit-backdrop-filter: blur(6px);
+
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+
+  overflow-y: auto;
+  max-height: 85vh;
+  padding: 28px;
+
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+  animation: slideUp 0.6s ease forwards;
+
+  /* 🔴 IMPORTANT — REMOVE ALL GLOW */
+  text-shadow: none;
+}
+
+/* Animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-size: 26px;
+  color: #e5e7eb;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-shadow: none;
+}
+
+.close-btn:hover {
+  color: #38bdf8;
+}
+
+/* Labels */
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 15px;
+  color: #e8eaed;
+
+  /* 🔴 KILL GLOW */
+  text-shadow: none;
+}
+
+/* Inputs */
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+
+  background: #ffffff;
+  color: #0b101e;
+
+  border-radius: 14px;
+  border: 2px solid #e2e8f0;
+
+  outline: none;
+  font-size: 15px;
+
+  /* 🔴 FORCE NO GLOW */
+  text-shadow: none !important;
+  box-shadow: none;
+}
+
+/* Placeholder */
+.form-input::placeholder {
+  color: #94a3b8;
+  text-shadow: none;
+}
+
+/* Focus */
+.form-input:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+}
+
+/* Button */
+.form-button {
+  padding: 12px;
+  border-radius: 999px;
+  border: none;
+
+  font-weight: 600;
+  font-size: 15px;
+  color: white;
+
+  cursor: pointer;
+
+  /* 🔴 REMOVE TEXT GLOW */
+  text-shadow: none;
+}
+
+.form-button:hover {
+  opacity: 0.92;
+
+}
+
+
+@media (max-height: 700px) {
+  .contact-card {
+    max-height: 80vh;
+  }
+}
+
+
+
+
+/* ================= BACKGROUND BASE ================= */
+.animated-bg {
+  z-index: -1;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  overflow: hidden;
+}
+
+/* ================= PARTICLES ================= */
+#particles-js {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* ================= FLOATING SHAPES ================= */
+.shape {
+  position: absolute;
+  opacity: 0.18;
+  animation: floatShape 14s ease-in-out infinite;
+}
+
+/* Circle */
+.shape-circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: #38bdf8;
+  top: 15%;
+  left: 10%;
+}
+
+/* Triangle */
+.shape-triangle {
+  width: 0;
+  height: 0;
+  border-left: 70px solid transparent;
+  border-right: 70px solid transparent;
+  border-bottom: 120px solid #a855f7;
+  top: 60%;
+  left: 70%;
+}
+
+/* Square */
+.shape-square {
+  width: 120px;
+  height: 120px;
+  background: #22d3ee;
+  top: 35%;
+  left: 45%;
+}
+
+/* Floating animation */
+@keyframes floatShape {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-40px);
+  }
+}

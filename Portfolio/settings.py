@@ -117,23 +117,21 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / "media"
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 # --------------------------------------------------
-# EMAIL (SMTP CONFIGURATION)
+# EMAIL (GMAIL SMTP CONFIG)
 # --------------------------------------------------
 
-# FALLBACK TO CONSOLE IF NO SMTP CREDENTIALS
-if not os.environ.get("EMAIL_HOST") or not os.environ.get("EMAIL_HOST_PASSWORD"):
-    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-    print("WARNING: SMTP credentials not found. Using console backend for development.")
-else:
-    # Use SMTP backend for real email sending
-    EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-    EMAIL_HOST = os.environ.get("EMAIL_HOST", "smtp.gmail.com")
-    EMAIL_PORT = int(os.environ.get("EMAIL_PORT", "587"))
-    EMAIL_USE_TLS = os.environ.get("EMAIL_USE_TLS", "True").lower() == "true"
-    EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
-    EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
-    print("SMTP configured for real email sending.")
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+
+EMAIL_HOST = os.environ.get("EMAIL_HOST", "smtp.gmail.com")
+EMAIL_PORT = int(os.environ.get("EMAIL_PORT", 587))
+EMAIL_USE_TLS = os.environ.get("EMAIL_USE_TLS", "True").lower() == "true"
+
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
+
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
 
@@ -145,8 +143,7 @@ SENDGRID_SANDBOX_MODE_IN_DEBUG = False
 # CSRF SETTINGS
 # --------------------------------------------------
 CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:8000",
-    "http://127.0.0.1:8000",
+    "https://*.vercel.app",
 ]
 
 CSRF_COOKIE_SECURE = False
